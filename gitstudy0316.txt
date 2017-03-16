@@ -2,3 +2,4 @@
 03-15 15:59:54.108: E/nari.pms.app.ymgl.rfid.dao.RFIDdao(2412): getSbByRfidXinZeng=服务端未能成功完成查询，请检查查询条件是否正确。
 03-15 16:01:02.608: D/nari.pms.app.ymgl.rfid.dao.RFIDdao(2730): sql=select zcjwbsbm,jzjsbmc,dtgcmc,GJWBSBM,xmdymc,swid,sblx from SCYW.T_DW_ZCGL_ZCQC where  swid is not null and ZCJWBSBM='1510D01505BC0122111Z0003' and pdjg='02' and swid='010010100000000000000010'
 03-15 16:01:02.865: D/nari.pms.app.ymgl.rfid.dao.RFIDdao(2730): getSbByRfidXinZeng=MPMC={}  rfid=010010100000000000000010 sblx= 南京220千伏输变电工程sblxmc =1302001
+修改1
