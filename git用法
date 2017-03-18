@@ -1,0 +1,108 @@
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+
+ git init
+ git add readme.txt
+ git commit -m "wrote a readme file"
+ git status
+ git diff readme.txt 
+ git log
+ git log --pretty=oneline
+ git reset --hard HEAD^
+ cat readme.txt
+ git reset --hard 3628164
+ git reflog
+ git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别：
+ git checkout -- readme.txt
+ rm test.txt
+ ssh-keygen -t rsa -C "youremail@example.com"
+ 点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
+ git remote add origin git@github.com:michaelliao/learngit.git
+ git push -u origin master
+ git push origin master
+ git clone git@github.com:michaelliao/gitskills.git
+ git checkout -b dev
+ git branch dev
+git checkout dev
+git checkout master
+git merge dev
+git branch -d dev
+git branch
+git log --graph --pretty=oneline --abbrev-commit
+git merge --no-ff -m "merge with no-ff" dev
+因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。
+
+
+ 并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+$ git stash
+ Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
+ git stash list
+ 工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
+
+一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
+
+另一种方式是用git stash pop，恢复的同时把stash内容也删了：
+
+$ git stash pop
+
+强行删除没有合并的分支：
+
+$ git branch -D feature-vulcan
+要查看远程库的信息，用git remote：
+
+$ git remote
+git remote -v显示更详细的信息：
+
+$ git push origin master
+如果要推送其他分支，比如dev，就改成：
+
+$ git push origin dev
+
+git branch
+现在，你的小伙伴要在dev分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支：
+
+$ git checkout -b dev origin/dev
+
+git pull
+
+git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+
+$ git branch --set-upstream dev origin/dev
+
+git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+
+$ git branch --set-upstream dev origin/dev
+git tag v1.0
+git tag
+git log --pretty=oneline --abbrev-commit
+
+ git tag v0.9 6224937
+
+ git show v0.9
+
+ 还可以创建带有说明的标签，用-a指定标签名，-m指定说明文字：
+
+$ git tag -a v0.1 -m "version 0.1 released" 3628164
+
+ git tag -d v0.1
+
+ 因为创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。
+
+如果要推送某个标签到远程，使用命令git push origin <tagname>：
+
+$ git push origin v1.0
+，一次性推送全部尚未推送到远程的本地标签：
+
+$ git push origin --tags
+，要删除远程标签就麻烦一点，先从本地删除：
+
+$ git tag -d v0.9
+从远程删除。删除命令也是push，
+ git push origin :refs/tags/v0.9
+
+ git clone git@github.com:michaelliao/bootstrap.git
