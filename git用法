@@ -111,3 +111,4 @@ $ git tag -d v0.9
  remote origin already exists--git remote rm origin.
  解决git error: failed to push some refs to 'git@github.com:
  git pull origin master 
+ //主线上修改，再创建分支
