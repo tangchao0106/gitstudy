@@ -233,3 +233,7 @@ git update-index --no-assume-unchanged file
 git clean -df 时，没有版控的文件会被清除，第一种情况忽略的文件都会被clean的，第二种的不会。
 git co . 恢复文件修改时，第二种情况的文件修改会被恢复。
 .gitignore 必须加入版控，否则一 clean 就没了。
+删除远程文件 git rm 文件
+git add * 
+git commit 
+git push origin master
